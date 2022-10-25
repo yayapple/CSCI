@@ -80,12 +80,12 @@ public class ArrayDrills {
         int[] tempArr = new int[Arr1.length + Arr2.length];
         int len = 0; // to keep track of how many numbers in return array
 
-        outer_loop: for (int i = 0; i < Arr1.length; i++) {
+        outer_loop: for (int i : Arr1) {
             for (int j = 0; j < len; j++) { // only loops over entries in tempArr
-                if (Arr1[i] == tempArr[j]) continue outer_loop; // checks if the number is already in the array
+                if (i == tempArr[j]) continue outer_loop; // checks if the number is already in the array
             }
             for (int j : Arr2) {
-                if (Arr1[i] == j) {
+                if (i == j) {
                     tempArr[len] = j;
                     len++;
                     continue outer_loop;
