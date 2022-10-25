@@ -21,9 +21,29 @@ public class ArrayDrills {
 
 		System.out.println("Step 5");
 		int[] retArr = ArrayDrills.findInBoth(myArray3, myArray4);
+        System.out.printf("length %d: ", retArr.length);
 		for (int i : retArr) {
-			System.out.println(i);
+			System.out.print(i + " ");
 		}
+        System.out.println();
+
+        int[] myArray5 = {1, 2, 3, 4, 5, 6};
+        retArr = ArrayDrills.findInBoth(myArray5, myArray5);
+        System.out.printf("length %d: ", retArr.length);
+		for (int i : retArr) {
+			System.out.print(i + " ");
+		}
+        System.out.println();
+
+        int[] myArray6 = {1, 1, 2, 2, 3, 3, 1, 2, 3, 4, 4, 5, 1};
+        int[] myArray7 = {5, 6, 7, 8, 1, 1, 1, 5};
+        retArr = ArrayDrills.findInBoth(myArray6, myArray7);
+        System.out.printf("length %d: ", retArr.length);
+		for (int i : retArr) {
+			System.out.print(i + " ");
+		}
+        System.out.println();
+
 	}
 
 	public static boolean searchArray(String[] myArr, String value) {
@@ -57,22 +77,28 @@ public class ArrayDrills {
 		}
 		return count;
 	}
-	
-	public static int[] findInBoth(int[] Arr1, int[] Arr2) {
-		ArrayList<Integer> retArr = new ArrayList<Integer>();
 
-		for (int i : Arr1) {
-			for (int j : Arr2) {
-				if (i == j) {
-					retArr.add(i);
-				}
-			}
-		}
-		int[] intArr = new int[retArr.size()];
-		for (int i = 0; i < retArr.size(); i++) {
-			intArr[i] = retArr.get(i);
-		}
-		return intArr;
-	}
+    public static int[] findInBoth(int[] Arr1, int[] Arr2) {
+        int[] tempArr = new int[Arr1.length + Arr2.length];
+        int len = 0; // to keep track of how many numbers in return array
 
+        outer_loop: for (int i = 0; i < Arr1.length; i++) {
+            for (int j = 0; j < len; j++) { // only loops over entries in tempArr
+                if (Arr1[i] == tempArr[j]) continue outer_loop; // checks if the number is already in the array
+            }
+            for (int j : Arr2) {
+                if (Arr1[i] == j) {
+                    tempArr[len] = j;
+                    len++;
+                    continue outer_loop;
+                }
+            }
+        }
+
+        int[] retArr = new int[len];
+        for (int i = 0; i < len; i++) retArr[i] = tempArr[i]; // remove 0s from array
+
+        return retArr;
+
+    }
 }
