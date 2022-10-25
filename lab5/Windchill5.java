@@ -9,6 +9,7 @@ public class Windchill5 {
 
         System.out.print("\nEnter current temperature: ");
         temp = scnr.nextInt();
+        scnr.close();
 
         // Print header
         System.out.print("      temp");

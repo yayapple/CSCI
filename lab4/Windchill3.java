@@ -4,6 +4,7 @@ public class Windchill3 {
     public static void main(String[] args) {
         double windchill, temp, speed;
         Scanner scnr = new Scanner(System.in);
+        scnr.close();
 
         System.out.print("\nEnter current temperature: ");
         temp = Double.valueOf(scnr.nextLine());

@@ -5,6 +5,7 @@ public class Pennies {
         Scanner scnr = new Scanner(System.in);
         System.out.print("Enter number of days worked (5-30 inclusive): ");
         int numDays = scnr.nextInt();
+        scnr.close();
 
         if (numDays > 30 || numDays < 5) {
             System.out.println("Invalid number of days");

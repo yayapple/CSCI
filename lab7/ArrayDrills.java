@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class ArrayDrills {
 	public static void main(String[] args) {
 		System.out.println("Step 2");

@@ -4,7 +4,7 @@ public class rps {
     public static void main(String[] args) {
         Scanner scnr = new Scanner(System.in);
         System.out.print("Select rock, paper, or scissors: \n> ");
-
+        scnr.close();
         String userChoice = scnr.nextLine().toLowerCase();
 
         String[] choices = {"rock", "paper", "scissors"}; // define valid choices 

@@ -17,6 +17,7 @@ public class calc {
     Scanner scnr = new Scanner(System.in);
     try {
       int choice = Integer.valueOf(scnr.nextLine());
+      scnr.close();
       if (choice > 4 || choice < 1) {
         throw new Exception();
       }
@@ -37,6 +38,7 @@ public class calc {
       System.exit(0);
 
     } catch(Exception e) {
+        scnr.close();
       System.out.print("Please input a valid number.");
       System.exit(0);
     }
@@ -50,6 +52,7 @@ public class calc {
     System.out.println();
     System.out.println("Enter the radius of the circle:");
     radius = Double.valueOf(scnr.nextLine());
+    scnr.close();
 
     area = Math.pow(radius, 2) * Math.PI;
 
@@ -67,6 +70,7 @@ public class calc {
 
     System.out.println("Enter the width of the rectangle:");
     width = Double.valueOf(scnr.nextLine());
+    scnr.close();
 
     area = length * width;
 
@@ -88,6 +92,7 @@ public class calc {
 
     System.out.println("Enter the length of the third side:");
     c = Double.valueOf(scnr.nextLine());
+    scnr.close();
     
     s = (a + b + c) / 2;
     area = Math.sqrt(s * (s - a) * (s - b) * (s - c));

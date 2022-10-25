@@ -7,6 +7,7 @@ public class powers {
         
         System.out.print("Enter base: ");
         int power = Integer.valueOf(scnr.nextLine());
+        scnr.close();
 
         if (power < 0) {
             System.out.println("base must be 0 or greater");

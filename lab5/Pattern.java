@@ -6,6 +6,7 @@ public class Pattern {
         
         System.out.print("Enter # of rows: ");
         int rows = scnr.nextInt();
+        scnr.close();
 
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < 2 * i + 1; j++) {

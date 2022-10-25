@@ -9,6 +9,7 @@ public class Windchill4 {
         temp = Double.valueOf(scnr.nextLine());
         System.out.print("\nEnter starting wind speed: ");
         speed = Double.valueOf(scnr.nextLine());
+        scnr.close();
 
         if (speed < 0) {
           throw new Error("windspeed must be higher than 0");
