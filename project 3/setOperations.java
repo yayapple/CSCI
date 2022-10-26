@@ -2,38 +2,37 @@ import static java.util.Arrays.sort;
 
 public class setOperations {
     public static void main(String[] args) {
-        int[] retArr = new int[0];
-        System.out.println("unionOp");
         int[] array1 = {1, 4, 7, 9};
         int[] array2 = {1, 2, 4, 12};
 
-        retArr = unionOp(array1, array2);
-        System.out.printf("length %d: ", retArr.length);
-		for (int i : retArr) {
-			System.out.print(i + " ");
-		}
-        System.out.println();
+        System.out.println("unionOp");
+        printArr(unionOp(array1, array2));
 
         System.out.println("intersectOp");
-        retArr = intersectOp(array1, array2);
-        System.out.printf("length %d: ", retArr.length);
-		for (int i : retArr) {
-			System.out.print(i + " ");
-		}
-        System.out.println();
+        printArr(intersectOp(array1, array2));
 
         System.out.println("minusOp");
-        retArr = minusOp(array1, array2);
-        System.out.printf("length %d: ", retArr.length);
-		for (int i : retArr) {
-			System.out.print(i + " ");
+        printArr(minusOp(array1, array2));
+    }
+
+    public static void printArr(int[] arr) {
+        System.out.printf("length %d: [", arr.length);
+		for (int i = 0; i < arr.length-1; i++) {
+			System.out.print(arr[i] + ", ");
 		}
-        System.out.println();
+        System.out.printf("%d]%n%n", arr[arr.length-1]);
     }
 
     public static int[] unionOp(int[] array1, int[] array2) {
         int[] tempArr = new int[array1.length + array2.length];
-        
+        /* 
+        could first combine both arrays, then only run loop once. 
+        not much redundancy to reduce with only 2 arrays, however.
+
+        int[] bothArr = new int[array1.length + array2.length]
+        System.arraycopy(array1, 0, bothArr, 0, array1.length);
+        System.arraycopy(array2, 0, bothArr, array1.length, array2.length);
+        */
         int len = 0;
         outer_loop: for (int i : array1) { // add array 1 to union set.
             for (int j = 0 ; j < len; j++) {
@@ -51,10 +50,7 @@ public class setOperations {
             len++;
         }
 
-        int[] retArr = new int[len];
-        for (int i = 0; i < len; i++) retArr[i] = tempArr[i]; // remove 0s from array
-        sort(retArr);
-        return retArr;
+        return stripArr(tempArr, len);
     }
 
     public static int[] intersectOp(int[] array1, int[] array2) { // taken from lab 7 step 5
@@ -74,10 +70,7 @@ public class setOperations {
             }
         }
 
-        int[] retArr = new int[len];
-        for (int i = 0; i < len; i++) retArr[i] = tempArr[i]; // remove 0s from array
-        sort(retArr);
-        return retArr;
+        return stripArr(tempArr, len);
     }
 
     public static int[] minusOp(int[] array1, int[] array2) {
@@ -92,10 +85,15 @@ public class setOperations {
             len++;
         }
 
+        return stripArr(tempArr, len);
+    }
+
+    public static int[] stripArr(int[] arr, int len) { 
+        // returns an array of length (len) containing the first (len) elements of (arr)
+
         int[] retArr = new int[len];
-        for (int i = 0; i < len; i++) retArr[i] = tempArr[i]; // remove 0s from array
+        for (int i = 0; i < len; i++) retArr[i] = arr[i];
         sort(retArr);
         return retArr;
-
     }
 }
