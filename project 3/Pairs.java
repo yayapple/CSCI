@@ -5,9 +5,9 @@ public class Pairs {
         int[] arr2 = {3, 2};
         int[] retArr = sumPairs(arr1, arr2);
         System.out.printf("length %d: ", retArr.length);
-		for (int i : retArr) {
-			System.out.print(i + " ");
-		}
+        for (int i : retArr) {
+            System.out.print(i + " ");
+        }
         System.out.println();
 
     }

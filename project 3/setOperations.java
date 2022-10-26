@@ -17,9 +17,9 @@ public class setOperations {
 
     public static void printArr(int[] arr) {
         System.out.printf("length %d: [", arr.length);
-		for (int i = 0; i < arr.length-1; i++) {
-			System.out.print(arr[i] + ", ");
-		}
+        for (int i = 0; i < arr.length-1; i++) {
+            System.out.print(arr[i] + ", ");
+        }
         System.out.printf("%d]%n%n", arr[arr.length-1]);
     }
 
