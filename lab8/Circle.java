@@ -6,46 +6,46 @@ class Circle {
     final double PI = 3.1415926535;
     
     public Circle() {
-        radius = 1.0;
-        color = "yellow";
+        this.radius = 1.0;
+        this.color = "yellow";
     }
 
-    public Circle(double inRadius, String inColor) {
-        radius = inRadius;
-        color = inColor;
+    public Circle(double radius, String color) {
+        this.radius = radius;
+        this.color = color;
     }
 
-    public void setRadius(double inRadius) {
-        radius = inRadius;
+    public void setRadius(double radius) {
+        this.radius = radius;
     }
 
     public double getRadius() {
-        return radius;
+        return this.radius;
     }
 
-    public void setColor(String inColor) {
-        color = inColor;
+    public void setColor(String color) {
+        this.color = color;
     }
 
     public String getColor() {
-        return color;
+        return this.color;
     }
 
     public double getArea() {
-        return PI * radius * radius;
+        return PI * this.radius * this.radius;
     }
 
     public double getCircumference() {
-        return PI * 2 * radius;
+        return PI * 2 * this.radius;
     }
 
     public String toString() {
-        return ("Radius: " + radius + ", Color: " + color);
+        return ("Radius: " + this.radius + ", Color: " + this.color);
     }
 
     public Circle addRadius(Circle other) {
         Circle retCircle = new Circle();
-        retCircle.setRadius(radius + other.getRadius());
+        retCircle.setRadius(this.radius + other.getRadius());
         retCircle.setColor("red");
 
         return retCircle;

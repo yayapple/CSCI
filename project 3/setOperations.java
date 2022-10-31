@@ -1,6 +1,8 @@
 import static java.util.Arrays.sort;
 
-public class setOperations {
+// autograder fails?
+
+public class SetOperations {
     public static void main(String[] args) {
         int[] array1 = {1, 4, 7, 9};
         int[] array2 = {1, 2, 4, 12};
