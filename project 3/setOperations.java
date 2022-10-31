@@ -1,7 +1,5 @@
 import static java.util.Arrays.sort;
 
-// autograder fails?
-
 public class SetOperations {
     public static void main(String[] args) {
         int[] array1 = {1, 4, 7, 9};
