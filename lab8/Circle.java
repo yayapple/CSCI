@@ -1,6 +1,6 @@
 package lab8;
 
-class Circle {
+public class Circle {
     private double radius;
     private String color;
     final double PI = 3.1415926535;
