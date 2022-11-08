@@ -21,7 +21,7 @@ public class TestRectangle {
         System.out.println("testing ArrRectangles");
         ArrRectangles arr1 = new ArrRectangles(5); // test adding too many rectangles
         for (int i = 0; i < 6; i++) {
-            System.out.println("attempting to add rectangle:");
+            System.out.printf("%nattempting to add rectangle %d: ", i+1);
             arr1.addRec(rec1);
         }
 
@@ -29,6 +29,8 @@ public class TestRectangle {
         arr2.addRec(rec2);
         arr2.addRec(rec2);
 
+        System.out.println(arr1);
+        System.out.println(arr2);
         System.out.println(arr1.addWidths()); // 22 * 5 = 110
         System.out.println(arr2.addWidths()); // 5 * 2 = 10
         System.out.println(arr1.addLengths()); // 4 * 5 = 20

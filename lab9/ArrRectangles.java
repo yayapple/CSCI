@@ -1,5 +1,7 @@
 package lab9;
 
+import java.util.Arrays;
+
 public class ArrRectangles {
     private Rectangle[] rectangles;
     private int count;
@@ -46,5 +48,9 @@ public class ArrRectangles {
             }
         }
         return false;
+    }
+
+    public String toString() {
+        return Arrays.toString(rectangles);
     }
 }
