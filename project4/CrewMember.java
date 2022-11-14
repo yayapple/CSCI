@@ -125,5 +125,4 @@ public class CrewMember {
 
         return String.format("Crew Member: %d, %s %s, %s, %s, %d", this.crewId, this.firstName, this.lastName, this.position, ratingList, avgRating);
     }
-
 }
