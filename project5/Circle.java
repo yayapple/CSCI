@@ -17,7 +17,7 @@ public class Circle extends Closed {
 	 * @param radius Radius of the Circle.
 	 */
 	public Circle(int x, int y, int radius) {
-		super(0,0);
+		super(x,y);
 		this.radius = radius;
 		
 	}
