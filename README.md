@@ -1,1 +1,1 @@
-files for labs and workshops for CSCI 1301
+csci git repository
